@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.herbertlacan.controller.EmailProveedorController">
+   <children>
+      <Label layoutX="113.0" layoutY="24.0" prefHeight="51.0" prefWidth="374.0" text="E-mail de Proveedores" AnchorPane.bottomAnchor="345.0" AnchorPane.leftAnchor="113.0" AnchorPane.rightAnchor="113.0" AnchorPane.topAnchor="24.0">
+         <font>
+            <Font name="System Bold Italic" size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="117.0" prefHeight="28.0" prefWidth="122.0" text="Descripción:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="159.0" prefHeight="28.0" prefWidth="122.0" text="Email">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="199.0" prefHeight="28.0" prefWidth="98.0" text="Proveedor">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDescripcion" editable="false" layoutX="189.0" layoutY="119.0" prefHeight="25.0" prefWidth="356.0" promptText="Descripción del Teléfono" />
+      <Button fx:id="btnNuevo" layoutX="48.0" layoutY="380.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="25.0" prefWidth="68.0" text="Nuevo" />
+      <Button fx:id="btnEliminar" layoutX="127.0" layoutY="380.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="25.0" prefWidth="68.0" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="206.0" layoutY="380.0" mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="68.0" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="284.0" layoutY="380.0" mnemonicParsing="false" onAction="#reporte" prefHeight="25.0" prefWidth="68.0" text="Reporte" />
+      <TextField fx:id="txtEmail" editable="false" layoutX="189.0" layoutY="161.0" prefHeight="25.0" prefWidth="356.0" promptText="Teléfono del Cliente" />
+      <ComboBox fx:id="cmbCodigoProveedor" layoutX="189.0" layoutY="201.0" prefHeight="25.0" prefWidth="200.0" />
+      <Label layoutX="48.0" layoutY="76.0" prefHeight="28.0" prefWidth="98.0" text="Codigo">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbEmailProveedor" layoutX="189.0" layoutY="75.0" prefHeight="25.0" prefWidth="200.0" />
+      <TableView fx:id="tblEmailProveedores" layoutX="46.0" layoutY="243.0" onMouseClicked="#seleccionarElemento" prefHeight="126.0" prefWidth="509.0">
+         <columns>
+            <TableColumn fx:id="colCodigo" prefWidth="145.0" text="CodigoEmailProveedor" />
+            <TableColumn fx:id="colDescripcion" prefWidth="137.0" text="Descripcion" />
+            <TableColumn fx:id="colEmail" prefWidth="98.0" text="Email" />
+            <TableColumn fx:id="colCodigoProveedor" prefWidth="128.0" text="CodigoCliente" />
+         </columns>
+      </TableView>
+      <ImageView fitHeight="39.0" fitWidth="37.0" layoutX="559.0" layoutY="383.0" onMousePressed="#MenuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../images/home.png" />
+         </image>
+      </ImageView>
+   </children>
+   <stylesheets>
+      <URL value="@../css/Button.css" />
+      <URL value="@../css/Combo-box.css" />
+      <URL value="@../css/Label.css" />
+      <URL value="@../css/Text-Field.css" />
+      <URL value="@../css/Table.css" />
+      <URL value="@../resources/Root.css" />
+   </stylesheets>
+</AnchorPane>

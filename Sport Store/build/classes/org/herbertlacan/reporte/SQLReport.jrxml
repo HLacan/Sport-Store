@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SQLReport" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3ee7e46-55e2-4a8e-b791-24d371c7f122">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="70"/>
+	<parameter name="_NumeroDocumento" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Informatica\\Documents\\NetBeansProjects\\ApplicationSportStore 2016136\\src\\org\\herbertlacan\\reporte\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[execute sp_BuscarCompra $P{_NumeroDocumento}]]>
+	</queryString>
+	<field name="NumeroDocumento" class="java.lang.Integer"/>
+	<field name="Descripcion" class="java.lang.String"/>
+	<field name="Total" class="java.math.BigDecimal"/>
+	<field name="Fecha" class="java.lang.String"/>
+	<field name="CodigoProveedor" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="572" height="79" backcolor="#CCFFCC" uuid="b14948db-0865-4842-9a4d-f7e402507653"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="238" y="19" width="117" height="35" uuid="f5c3aaac-2307-4768-808d-c6246923ad24"/>
+				<textElement textAlignment="Justified">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ NextSport]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="90" splitType="Stretch">
+			<textField>
+				<reportElement x="163" y="16" width="100" height="20" uuid="991b4a39-6e7d-4d89-81a8-ace536ea0c0f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NumeroDocumento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="16" width="138" height="20" uuid="23360635-edcb-4cd4-bb90-f181c07e35dc"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Numero de Documento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="163" y="46" width="192" height="20" uuid="4b7e1ccc-f63f-4a1a-8679-a73c357aee22"/>
+				<textFieldExpression><![CDATA[$F{Descripcion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="46" width="100" height="20" uuid="7bf46bf2-9419-4a19-a29b-b32894689324"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Descripcion:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="163" y="35" width="100" height="1" uuid="5f918913-0d0f-428f-91ff-2b0bbda1c604"/>
+			</line>
+			<line>
+				<reportElement x="163" y="66" width="100" height="1" uuid="0b4d2e43-06a8-456d-a3c6-17e94baeb629"/>
+			</line>
+			<textField>
+				<reportElement x="460" y="16" width="100" height="20" uuid="49374590-af84-4fc8-b4c6-a12a15d7f6d3"/>
+				<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="360" y="16" width="100" height="20" uuid="6a0967f8-5225-4aae-adef-939f504db405"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="460" y="36" width="100" height="1" uuid="99bbce52-09b6-4ec7-991f-367339115e94"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="572" height="125" uuid="3e110fce-fa87-4b92-beb2-d112995fc5a0"/>
+				<subreportParameter name="_NumeroDocumento">
+					<subreportParameterExpression><![CDATA[$P{_NumeroDocumento}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "GenerarReporte1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

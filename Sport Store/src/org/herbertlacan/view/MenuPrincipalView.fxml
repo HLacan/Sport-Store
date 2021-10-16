@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.herbertlacan.controller.MenuPrincipalController">
+   <children>
+      <ImageView fitHeight="420.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/Fondo%20para%20Proyecto.jpg" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="27.0" prefWidth="600.0" style="-fx-background-color: transparent;">
+        <menus>
+          <Menu id="color" mnemonicParsing="false" text="Opciones">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaCategorias" text="Categorias" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaCliente" text="Clientes" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaCompras" text="Compras" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaDetalleCompras" text="Detalle De Compras" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaDetalleFacturas" text="Detalle De Facturas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaEmailClientes" text="Email Clientes" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaEmailProveedores" text="Email Proveedores" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaFacturas" text="Facturas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaMarca" text="Marcas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProveedores" text="Proveedores" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProductos" text="Productos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTallas" text="Tallas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTelefonoClientes" text="TelefonoClientes" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTelefonoProveedores" text="Telefono Proveedores" />
+               </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#About" text="Acerca De" />
+            </items>
+          </Menu>
+        </menus>
+         <padding>
+            <Insets left="-1.0" />
+         </padding>
+      </MenuBar>
+   </children>
+   <stylesheets>
+      <URL value="@../css/root.css" />
+      <URL value="@../css/Menu-Bar.css" />
+   </stylesheets>
+</AnchorPane>

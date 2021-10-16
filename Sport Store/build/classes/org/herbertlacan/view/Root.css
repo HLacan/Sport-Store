@@ -1,0 +1,4 @@
+.root{    
+    -fx-background-color:
+    linear-gradient(#757575 0%, #373837 25%, #232723 75%, black 100%);
+}

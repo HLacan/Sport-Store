@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.herbertlacan.controller.ProductoController">
+   <children>
+      <Label layoutX="298.0" layoutY="14.0" prefHeight="48.0" prefWidth="214.0" text="PRODUCTOS">
+         <font>
+            <Font name="System Bold Italic" size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="128.0" prefHeight="28.0" prefWidth="98.0" text="Descripcion:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDescripcion" editable="false" layoutX="138.0" layoutY="128.0" prefHeight="29.0" prefWidth="270.0" promptText="Descripcion del Producto" />
+      <Label layoutX="458.0" layoutY="90.0" prefHeight="28.0" prefWidth="98.0" text="Categoria:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbCodigoCategoria" layoutX="562.0" layoutY="90.0" mouseTransparent="true" prefHeight="25.0" prefWidth="173.0" promptText="Codigo de la Categoria" />
+      <ComboBox fx:id="cmbCodigoTalla" layoutX="562.0" layoutY="128.0" mouseTransparent="true" prefHeight="25.0" prefWidth="173.0" promptText="Codigo de la Marca" />
+      <Label layoutX="458.0" layoutY="128.0" prefHeight="28.0" prefWidth="98.0" text="Talla:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbCodigoMarca" layoutX="562.0" layoutY="165.0" mouseTransparent="true" prefHeight="25.0" prefWidth="173.0" promptText="Codigo de la Talla" />
+      <Label layoutX="458.0" layoutY="165.0" prefHeight="28.0" prefWidth="98.0" text="Marca:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="203.0" prefHeight="28.0" prefWidth="98.0" text="Imagen:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtImagen" editable="false" layoutX="138.0" layoutY="203.0" prefHeight="29.0" prefWidth="270.0" promptText="Ruta de la Imagen" />
+      <TableView fx:id="tblProductos" editable="true" layoutX="29.0" layoutY="360.0" onMouseClicked="#seleccionarElemento" prefHeight="204.0" prefWidth="740.0" tableMenuButtonVisible="true">
+        <columns>
+          <TableColumn fx:id="colCodigoProducto" prefWidth="110.0" resizable="false" text="CodigoProducto" />
+          <TableColumn fx:id="colDescripcion" minWidth="0.0" prefWidth="200.0" resizable="false" text="Descripcion" />
+            <TableColumn fx:id="colExistencia" minWidth="0.0" prefWidth="110.0" resizable="false" text="Existencia" />
+            <TableColumn fx:id="colImagen" minWidth="0.0" prefWidth="200.0" resizable="false" text="Imagen" />
+            <TableColumn fx:id="colPrecioUnidad" minWidth="0.0" prefWidth="110.0" resizable="false" text="PrecioUnitario" />
+            <TableColumn fx:id="colPrecioDocena" minWidth="0.0" prefWidth="110.0" resizable="false" text="PrecioDocena" />
+            <TableColumn fx:id="colPrecioMayor" minWidth="0.0" prefWidth="110.0" resizable="false" text="PrecioporMayor" />
+            <TableColumn fx:id="colCodigoCategoria" prefWidth="120.0" resizable="false" text="CodigoCategoria" />
+            <TableColumn fx:id="colCodigoMarca" prefWidth="120.0" resizable="false" text="CodigoMarca" />
+            <TableColumn fx:id="colCodigoTalla" prefWidth="120.0" resizable="false" text="CodigoTalla" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button fx:id="btnNuevo" layoutX="29.0" layoutY="577.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="30.0" prefWidth="70.0" text="Nuevo" />
+      <Button fx:id="btnEliminar" layoutX="110.0" layoutY="577.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="30.0" prefWidth="70.0" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="189.0" layoutY="577.0" mnemonicParsing="false" onAction="#editar" prefHeight="30.0" prefWidth="70.0" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="270.0" layoutY="577.0" mnemonicParsing="false" onAction="#reporte" prefHeight="30.0" prefWidth="70.0" text="Reporte" />
+      <Label layoutX="29.0" layoutY="241.0" prefHeight="28.0" prefWidth="98.0" text="Precio U.:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPrecioUnidad" editable="false" layoutX="138.0" layoutY="241.0" prefHeight="25.0" prefWidth="173.0" promptText="Precio por Unidad" />
+      <Label layoutX="29.0" layoutY="279.0" prefHeight="28.0" prefWidth="98.0" text="Precio D.:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPrecioDocena" editable="false" layoutX="138.0" layoutY="279.0" prefHeight="29.0" prefWidth="173.0" promptText="Precio por Docena" />
+      <Label layoutX="29.0" layoutY="317.0" prefHeight="28.0" prefWidth="98.0" text="Precio M.:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPrecioMayor" editable="false" layoutX="138.0" layoutY="317.0" prefHeight="29.0" prefWidth="173.0" promptText="Precio por Mayor" />
+      <Label layoutX="29.0" layoutY="90.0" prefHeight="28.0" prefWidth="98.0" text="Codigo:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbCodigoProducto" layoutX="138.0" layoutY="90.0" prefHeight="30.0" prefWidth="160.0" promptText="Codigo del Producto" />
+      <Label layoutX="29.0" layoutY="165.0" prefHeight="28.0" prefWidth="98.0" text="Existencia:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtExistencia" editable="false" layoutX="138.0" layoutY="165.0" prefHeight="29.0" prefWidth="270.0" promptText="Existencias" />
+      <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="735.0" layoutY="16.0" onMousePressed="#MenuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../images/home.png" />
+         </image>
+      </ImageView>
+   </children>
+   <stylesheets>
+      <URL value="@../css/Button.css" />
+      <URL value="@../css/Combo-box.css" />
+      <URL value="@../css/Label.css" />
+      <URL value="@../css/Table.css" />
+      <URL value="@../css/Text-Field.css" />
+      <URL value="@Root.css" />
+   </stylesheets>
+</AnchorPane>

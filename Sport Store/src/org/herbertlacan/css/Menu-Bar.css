@@ -1,0 +1,60 @@
+/* 
+    Document   : JMetroDarkTheme
+    Created on : Oct 23, 2012, 7:12:32 PM
+    Author     : Pedro Duque Vieira
+    Description:
+        Dark Metro style sheet for use in JavaFX applications
+*/
+
+.label{
+	-fx-text-fill: white;
+}
+
+.text-field{
+	-fx-background-color: #1d1d1d;
+	-fx-text-fill: white;
+	-fx-border-color: #e2e2e2;
+	-fx-border-width: 2;
+}
+
+.text-field:focused{
+	-fx-background-color: snow;
+	-fx-text-fill: Black;
+	-fx-border-color: dimgray;
+	-fx-border-width: 2;
+}
+
+
+
+
+.menu-bar{
+    -fx-background-color: black;
+}
+
+.menu:hover{
+	-fx-background-color: gray;
+}
+
+.menu:showing{
+	-fx-background-color: gray;
+}
+
+.context-menu{
+    
+-fx-background-color: #262626;
+
+}
+
+
+.menu-item:hover{
+-fx-background-color: gray;
+
+}
+
+.menu-item:focused{
+-fx-background-color: gray;
+
+}
+
+
+
